@@ -5,6 +5,7 @@
 Flasked injects application environment configuration at runtime based on given ENV variables and a mapping.
 
 This is pretty useful for applications following the [_12 factor app_](http://12factor.net/) principle stated by Heroku.
+
 For the specific details see <http://12factor.net/config>.
 
 ## Rationale
@@ -89,7 +90,7 @@ Extend/modify your `config/config.exs`:
 ```elixir
 config :flasked,
   otp_app: :my_otp_app,
-  map_file: "priv/flasked_env.exs" # must match with real file relative to the apps root directory
+  map_file: "priv/flasked_env.exs" # must match with real file relative to the app's root directory
 ```
 
 ### Run
