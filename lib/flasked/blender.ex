@@ -13,7 +13,9 @@ defmodule Flasked.Blender do
   defp is_collectable(collectable), do: is_map(collectable) || is_dict(collectable)
 
   defp is_dict(list) when is_list(list) do
-    Enum.all?(list, fn(elem) -> is_tuple(elem) && tuple_size(elem) == 2 end)
+    Enum.all?(list, fn(element) ->
+      is_tuple(element) && tuple_size(element) == 2
+    end)
   end
   defp is_dict(_), do: false
 
