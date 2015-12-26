@@ -1,8 +1,23 @@
 defmodule Flasked.Distiller do
   @moduledoc false
 
+  def convert(<<>>, :string), do: ""
+  def convert(<<>>, :atom), do: nil
+  def convert(<<>>, :integer), do: 0
+  def convert(<<>>, :float), do: 0.0
+  def convert(<<>>, :boolean), do: false
+  def convert(<<>>, :module), do: convert_module("Undefined.Module")
+  def convert(<<>>, :list), do: []
+  def convert(<<>>, :list_of_atoms), do: []
+  def convert(<<>>, :list_of_integers), do: []
+  def convert(<<>>, :list_of_floats), do: []
+  def convert(<<>>, :dict), do: []
+  def convert(<<>>, _), do: nil
+
   def convert(raw_value, :string),
     do: raw_value
+  def convert(raw_value, :atom),
+    do: String.to_atom(raw_value)
   def convert(raw_value, :integer),
     do: String.to_integer(raw_value)
   def convert(raw_value, :float),
