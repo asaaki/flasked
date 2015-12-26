@@ -8,6 +8,9 @@ This is pretty useful for applications following the [_12 factor app_](http://12
 
 For the specific details see <http://12factor.net/config>.
 
+Also in container environments like Docker this comes in quite handy when you're literally forced to use ENV vars for
+configuration of your specific container at startup time.
+
 ```sh
 # provide ENV var
 MY_FLASKED_APP_FOO=this_is_foo iex -S mix
@@ -32,8 +35,11 @@ documented.
 On the other hand, especially with containerization in mind, most of the environment specific configuration should be
 done at runtime, meaning you should not hard-code any environment/stage/role based configuration.
 
+I agree with separation of code and configuration, because configs are state, and the application artifacts should be
+stateless.
+
 There are similar projects like [Dotenv](https://github.com/avdi/dotenv_elixir), [Envy](https://github.com/BlakeWilliams/envy) and [ExConf](https://github.com/leakybucket/env_conf), but they don't go
-far enough for what I wanted.
+far enough for what I wanted. Most of them tackle only a very low-level need or are useful in development only.
 
 ### Why no YAML or JSON for the mapping?
 
@@ -128,7 +134,7 @@ Application.get_env(:my_flasked_app, :baz)
 
 ## The mapping file
 
-This file is just a normal Elixir module with some functions:
+This file is just a normal Elixir script file with a map as its content:
 
 ```elixir
 # priv/flasked_env.exs
