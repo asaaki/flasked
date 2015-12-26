@@ -4,6 +4,7 @@ defmodule Flasked.Bottler do
   alias Flasked.Environment
   alias Flasked.Board
   alias Flasked.Distiller
+  alias Flasked.Blender
 
   def run do
     for {app, template} <- Board.mapping do
@@ -13,7 +14,9 @@ defmodule Flasked.Bottler do
 
   defp apply_env_vars(app, applied_env_vars) do
     for {key, value} <- applied_env_vars do
-      Application.put_env app, key, value, [persistent: true]
+      old_value = Application.get_env(app, key)
+      merged_value = Blender.combine(old_value, value)
+      Application.put_env app, key, merged_value, [persistent: true]
     end
   end
 
