@@ -42,6 +42,14 @@ defmodule Flasked.Distiller do
       {String.to_atom(k), v}
     end)
   end
+  def convert(raw_value, :dict_of_integers) do
+    raw_value
+    |>convert(:list)
+    |> Enum.map(fn(pair) ->
+      [k, v] = String.split(pair, ":")
+      {String.to_atom(k), String.to_integer(v)}
+    end)
+  end
   def convert(raw_value, _),
     do: raw_value
 
