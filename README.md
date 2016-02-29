@@ -213,6 +213,10 @@ MY_FLASKED_APP_VAR=4.44,5.555,6.789
 MY_FLASKED_APP_VAR=this:is,a:dictionary
   {:flasked, MY_FLASKED_APP_VAR, :dict}
   => [this: "is", a: "dictionary"]
+
+MY_FLASKED_APP_VAR=one:1,two:2,three:3
+  {:flasked, MY_FLASKED_APP_VAR, :dict_of_integers}
+  => [one: 1, two: 2, three: 3]
 ```
 
 More sophisticated types could be supported. You're welcome to contribute.
