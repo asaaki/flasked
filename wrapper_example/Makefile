@@ -1,8 +1,8 @@
-include env.mk
+include wrapper_example/env.mk
 
 # Change name to your project(s)
 # delimit multiple prefixes with "|" like "OTP_A|OTP_B|OTP_C"
-OTP_APP_PREFIXES = MY_OTP_APP
+OTP_APP_PREFIXES = MY_OTP_APP|FLASKED
 
 show-env:
 	@sh -c 'env | sort | grep -E "^($(OTP_APP_PREFIXES))_"'
