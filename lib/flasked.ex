@@ -15,8 +15,13 @@ defmodule Flasked do
 
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
+    bottle_it
+    Supervisor.start_link([], [strategy: :one_for_one, name: Flasked.Supervisor])
+  end
+
+  def bottle_it do
     Config.check
     Bottler.run
-    Supervisor.start_link([], [strategy: :one_for_one, name: Flasked.Supervisor])
+    :ok
   end
 end

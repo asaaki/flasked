@@ -76,6 +76,14 @@ def application do
 end
 ```
 
+#### Standalone one-shot usage
+
+```elixir
+# If you want to control it yourself or
+# need to repeatedly call it in your application:
+Flasked.bottle_it
+```
+
 ### Add mapping
 
 Furthermore you need to set up the mapping file:
