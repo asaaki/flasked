@@ -185,45 +185,45 @@ a type and a default. If you want to give a default you always need to specify t
 
 ```
 MY_FLASKED_APP_VAR=a_string_val
-  {:flasked, MY_FLASKED_APP_VAR}
+  {:flasked, :MY_FLASKED_APP_VAR}
   => "a_string_val"
 
 MY_FLASKED_APP_VAR=true
-  {:flasked, MY_FLASKED_APP_VAR, :boolean}
+  {:flasked, :MY_FLASKED_APP_VAR, :boolean}
   => true
   - valid values: TRUE, true, FALSE, false
   - any other value will always default to `false`
 
 MY_FLASKED_APP_VAR=9
-  {:flasked, MY_FLASKED_APP_VAR, :integer}
+  {:flasked, :MY_FLASKED_APP_VAR, :integer}
   => 9
 
 MY_FLASKED_APP_VAR=3.1415
-  {:flasked, MY_FLASKED_APP_VAR, :float}
+  {:flasked, :MY_FLASKED_APP_VAR, :float}
   => 3.1415
 
 MY_FLASKED_APP_VAR=list,of,strings
-  {:flasked, MY_FLASKED_APP_VAR, :list}
+  {:flasked, :MY_FLASKED_APP_VAR, :list}
   => ["list", "of", "strings"]
 
 MY_FLASKED_APP_VAR=list,of,atoms
-  {:flasked, MY_FLASKED_APP_VAR, :list_of_atoms}
+  {:flasked, :MY_FLASKED_APP_VAR, :list_of_atoms}
   => [:list, :of, :atoms]
 
 MY_FLASKED_APP_VAR=1,2,3
-  {:flasked, MY_FLASKED_APP_VAR, :list_of_integers}
+  {:flasked, :MY_FLASKED_APP_VAR, :list_of_integers}
   => [1, 2, 3]
 
 MY_FLASKED_APP_VAR=4.44,5.555,6.789
-  {:flasked, MY_FLASKED_APP_VAR, :list_of_floats}
+  {:flasked, :MY_FLASKED_APP_VAR, :list_of_floats}
   => [4.44, 5.555, 6.789]
 
 MY_FLASKED_APP_VAR=this:is,a:dictionary
-  {:flasked, MY_FLASKED_APP_VAR, :dict}
+  {:flasked, :MY_FLASKED_APP_VAR, :dict}
   => [this: "is", a: "dictionary"]
 
 MY_FLASKED_APP_VAR=one:1,two:2,three:3
-  {:flasked, MY_FLASKED_APP_VAR, :dict_of_integers}
+  {:flasked, :MY_FLASKED_APP_VAR, :dict_of_integers}
   => [one: 1, two: 2, three: 3]
 ```
 
