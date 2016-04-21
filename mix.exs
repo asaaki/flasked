@@ -54,9 +54,9 @@ defmodule Flasked.Mixfile do
 
   defp deps do
     [
-      {:credo, "~> 0.2", only: [:dev, :test]},
+      {:credo, "~> 0.3", only: [:dev, :test]},
       {:ex_doc, "~> 0.11", only: [:docs]},
-      {:earmark, "~> 0.1", only: [:docs]},
+      {:cmark, "~> 0.6", only: [:docs]},
     ]
   end
 end
