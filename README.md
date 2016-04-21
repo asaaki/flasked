@@ -56,7 +56,7 @@ And `Code.eval_file("some/file.exs")` does the job just fine, really.
 ```elixir
 # mix.exs
 def deps do
-  [{:flasked, "~> 0.3"}]
+  [{:flasked, "~> 0.4"}]
 end
 ```
 

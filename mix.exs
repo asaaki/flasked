@@ -1,14 +1,14 @@
 defmodule Flasked.Mixfile do
   use Mix.Project
 
-  @version "0.3.0"
+  @version "0.4.0"
 
   def project do
     [
       app: :flasked,
       name: "flasked",
       version: @version,
-      elixir: "~> 1.1",
+      elixir: "~> 1.2",
       description: description,
       source_url: "https://github.com/asaaki/flasked",
       homepage_url: "http://hexdocs.pm/flasked",
@@ -18,7 +18,8 @@ defmodule Flasked.Mixfile do
     ]
   end
 
-  def application, do: [mod: {Flasked, []}]
+  def application,
+    do: [mod: {Flasked, []}]
 
   defp description do
     """
