@@ -1,0 +1,17 @@
+sudo: false
+
+language: elixir
+
+elixir:
+  - 1.2.0
+  - 1.2.4
+
+otp_release:
+  - 18.2
+
+before_install:
+  - kerl list installations
+
+after_script:
+  - mix credo --strict
+  - mix hex.outdated
