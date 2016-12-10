@@ -4,8 +4,13 @@ defmodule Flasked.Board do
   alias Flasked.Config
 
   def mapping do
-    {data, _bindings} = Code.eval_file(otp_app_map_file_path)
-    data
+    case Config.map_data do
+      nil ->
+        {data, _bindings} = Code.eval_file(otp_app_map_file_path)
+        data
+      data ->
+        data
+    end
   end
 
   defp otp_app_map_file_path do
